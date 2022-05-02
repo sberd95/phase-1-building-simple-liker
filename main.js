@@ -11,7 +11,7 @@ document.querySelectorAll('.like-glyph').forEach(button => {
       mimicServerCall()
       .then(() => {
         event.target.innerText = FULL_HEART
-        event.target.className = 'activated-heart'
+        event.target.classList.add('activated-heart') //adding to the classlist
       })
       .catch(error => {
         let modal = document.querySelector('#modal')
@@ -22,7 +22,7 @@ document.querySelectorAll('.like-glyph').forEach(button => {
     }
     else if (event.target.innerText === FULL_HEART) {
       event.target.innerText = EMPTY_HEART
-      event.target.className = ''
+      event.target.classList.remove('activated-heart') //removing from the classlist
     }
   })
 })
